@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-v3-deployment    # any- name-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-v3-app   #  image name
+  template:
+    metadata:
+      labels:
+        app: chat-v3-app   # image name
+    spec:
+      containers:
+      - name: chat-v3-container   #any-name-container
+        image: sahaana18/chat-v3-app     #dockerusername/imagename
+        ports:
+        - containerPort: 80 
+
